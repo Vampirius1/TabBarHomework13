@@ -66,8 +66,8 @@
 			children = (
 				863EF18729CEE4450013C709 /* AppDelegate.swift */,
 				863EF18929CEE4450013C709 /* SceneDelegate.swift */,
-				863EF1A329CEE68E0013C709 /* QuestionsViewController.swift */,
 				863EF1A129CEE66B0013C709 /* TabBarController.swift */,
+				863EF1A329CEE68E0013C709 /* QuestionsViewController.swift */,
 				863EF19B29CEE5FC0013C709 /* AlertViewController.swift */,
 				863EF19D29CEE6080013C709 /* AnswersViewController.swift */,
 				863EF19F29CEE6190013C709 /* CommentsViewController.swift */,
