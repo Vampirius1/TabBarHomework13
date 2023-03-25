@@ -7,23 +7,52 @@
 
 import UIKit
 
-class TabBarController: UIViewController {
+class TabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setupTabBarController()
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    //                 MARK: - Setup TabBarController
+    private func setupTabBarController() {
+        
+        let setOne = UINavigationController(rootViewController: QuestionsViewController())
+        let setTwo = UINavigationController(rootViewController: AnswersViewController())
+        let setThree = UINavigationController(rootViewController: CommentsViewController())
+        
+    viewControllers = [generateViewControllers(viewController: setOne, title: "Questions"),
+    generateViewControllers(viewController: setTwo, title: "Answers"),
+    generateViewControllers(viewController: setThree, title: "Comments")]
     }
-    */
+    
+//    MARK: - Generate ViewControllers
+    private func generateViewControllers(viewController: UIViewController, title: String) -> UIViewController {
+        viewController.tabBarItem.title = title
+        return viewController
+    }
+}
 
+//      MARK: - Extensions
+extension TabBarController {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+    }
+    
+    override func loadView() {
+        super.loadView()
+    }
 }
