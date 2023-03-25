@@ -9,21 +9,35 @@ import UIKit
 
 class QuestionsViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    //    MARK: - Buttons
+        let nextButton = UIButton()
+        
+    //    MARK: - life cicle
+        override func viewDidLoad() {
+            super.viewDidLoad()
+            
+            setupViews()
+            setupConstraints()
+        }
+        
+    //    MARK: - Views
+        private func setupViews() {
+            title = "Questions"
+            view.backgroundColor = .cyan
+        
+            nextButton.backgroundColor = .black
+            nextButton.setImage(UIImage(systemName: "play"), for: .normal)
+            nextButton.setTitleColor(.black, for: .normal)
+            nextButton.addAction(UIAction(handler: {[weak self] _ in
+                self?.navigationController?.pushViewController(AlertViewController(), animated: true)
+            }), for: .touchUpInside)
+            view.addSubview(nextButton)
+        }
+        
+    //    MARK: - Constraints
+        private func setupConstraints() {
+            view.translatesAutoresizingMaskIntoConstraints = false
+            view.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+            view.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        }
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-}
